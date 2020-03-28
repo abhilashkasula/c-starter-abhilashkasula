@@ -11,6 +11,7 @@ float convert_to_centigrade(int);
 float convert_to_fahrenheit(int);
 float calculate_SI(long int, int, int);
 int gcd(int, int);
+int lcm(int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
