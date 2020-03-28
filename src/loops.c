@@ -6,6 +6,7 @@ unsigned char is_even(int);
 int print_odds(int);
 int print_evens(int);
 int print_multiplication_table(int, int);
+long int add_numbers(int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -55,12 +56,21 @@ int print_multiplication_table(int m, int n) {
   return 0;
 }
 
+long int add_numbers(int startingAt, int endingAt) {
+  int sum = 0;
+  for(int i = startingAt; i <= endingAt; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
 int main(void) {
-  int number = 5;
+  int number = 5, num2 = 10;
   printf("\nFactorial of %d is %u\n", number, factorial(number));
   fibonacci(10);
   print_odds(10);
   print_evens(10);
   print_multiplication_table(5, 10);
+  printf("Sum of numbers between %d and %d is %ld", number, num2, add_numbers(number, num2));
   return 0;
 }
