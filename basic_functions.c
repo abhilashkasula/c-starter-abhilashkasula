@@ -10,7 +10,7 @@ int greatest_of_three(int, int, int);
 float convert_to_centigrade(int);
 float convert_to_fahrenheit(int);
 float calculate_SI(long int, int, int);
-int gcd(int);
+int gcd(int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -63,6 +63,10 @@ int gcd(int num1, int num2) {
   return number;
 }
 
+int lcm(int num1, int num2) {
+  return (num1 * num2) / gcd(num1, num2);
+}
+
 int main(void) {
   int number = 3, num2 = 10, num3 = 3;
   int temp = 100;
@@ -78,4 +82,5 @@ int main(void) {
   printf("Fahrenheit of given Centigrade %d is %f\n", temp, convert_to_fahrenheit(temp));
   printf("SI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_SI(principle, interest, period));
   printf("GCD of %d, %d is %d\n", number, num2, gcd(number, num2));
+  printf("LCM of %d, %d is %d\n", number, num2, lcm(number, num2));
 }
