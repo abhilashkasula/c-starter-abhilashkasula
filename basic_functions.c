@@ -5,11 +5,11 @@ unsigned char is_odd(int);
 int square(int);
 int cube(int);
 float average(int, int, int);
-int getGreatest(int, int);
-int greatestOfThree(int, int, int);
-float convertToCentigrade(int);
-float convertToFahrenheit(int);
-float calculateSI(long int, int, int);
+int get_greatest(int, int);
+int greatest_of_three(int, int, int);
+float convert_to_centigrade(int);
+float convert_to_fahrenheit(int);
+float calculate_SI(long int, int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -32,23 +32,23 @@ float average(int num1, int num2, int num3) {
   return sum / 3.00;
 }
 
-int getGreatest(int num1, int num2) {
+int get_greatest(int num1, int num2) {
   return num1 > num2 ? num1 : num2;
 }
 
-int greatestOfThree(int num1, int num2, int num3) {
-  return getGreatest(getGreatest(num1, num2), num3);
+int greatest_of_three(int num1, int num2, int num3) {
+  return get_greatest(get_greatest(num1, num2), num3);
 }
 
-float convertToCentigrade(int temp) {
+float convert_to_centigrade(int temp) {
   return ((temp - 32) * 5) / 9.00;
 }
 
-float convertToFahrenheit(int temp) {
+float convert_to_fahrenheit(int temp) {
   return ((temp * 9.00) / 5) + 32;
 }
 
-float calculateSI(long int principle, int interest, int period) {
+float calculate_SI(long int principle, int interest, int period) {
   return (principle * interest * period) / 100.00;
 }
 
@@ -62,8 +62,8 @@ int main(void) {
   printf("Square of %d is %d\n", number, square(number));
   printf("Cube of %d is %d\n", number, cube(number));
   printf("Average of %d, %d and %d is %f\n", number, num2, num3, average(number, num2, num3));
-  printf("Greatest of %d, %d and %d is %d\n", number, num2, num3, greatestOfThree(number, num2, num3));
-  printf("Centigrade of given Fahrenheit %d is %f\n", temp, convertToCentigrade(temp));
-  printf("Fahrenheit of given Centigrade %d is %f\n", temp, convertToFahrenheit(temp));
-  printf("SI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculateSI(principle, interest, period));
+  printf("Greatest of %d, %d and %d is %d\n", number, num2, num3, greatest_of_three(number, num2, num3));
+  printf("Centigrade of given Fahrenheit %d is %f\n", temp, convert_to_centigrade(temp));
+  printf("Fahrenheit of given Centigrade %d is %f\n", temp, convert_to_fahrenheit(temp));
+  printf("SI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_SI(principle, interest, period));
 }
