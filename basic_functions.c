@@ -1,5 +1,16 @@
 #include<stdio.h>
 
+unsigned char is_even(int);
+unsigned char is_odd(int);
+int square(int);
+int cube(int);
+float average(int, int, int);
+int getGreatest(int, int);
+int greatestOfThree(int, int, int);
+float convertToCentigrade(int);
+float convertToFahrenheit(int);
+float calculateSI(long int, int, int);
+
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
 }
