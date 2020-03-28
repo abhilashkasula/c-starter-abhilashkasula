@@ -91,4 +91,5 @@ int main(void) {
   printf("CI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_CI(principle, interest, period));
   printf("GCD of %d, %d is %d\n", number, num2, gcd(number, num2));
   printf("LCM of %d, %d is %d\n", number, num2, lcm(number, num2));
+  return 0;
 }

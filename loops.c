@@ -13,4 +13,5 @@ unsigned int factorial(int number) {
 int main(void) {
   int number = 5;
   printf("Factorial of %d is %u\n", number, factorial(number));
+  return 0;
 }
