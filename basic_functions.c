@@ -33,6 +33,10 @@ float convertToCentigrade(int temp) {
   return ((temp - 32) * 5) / 9.00;
 }
 
+float convertToFahrenheit(int temp) {
+  return ((temp * 9.00) / 5) + 32;
+}
+
 int main(void) {
   int number = 2, num2 = 2, num3 = 3;
   int temp = 100;
@@ -43,4 +47,5 @@ int main(void) {
   printf("Average of %d, %d and %d is %f\n", number, num2, num3, average(number, num2, num3));
   printf("Greatest of %d, %d and %d is %d\n", number, num2, num3, greatestOfThree(number, num2, num3));
   printf("Centigrade of given Fahrenheit %d is %f\n", temp, convertToCentigrade(temp));
+  printf("Fahrenheit of given Centigrade %d is %f\n", temp, convertToFahrenheit(temp));
 }
