@@ -17,9 +17,7 @@ int cube(int number) {
 }
 
 int main(void) {
-  int number;
-  printf("Enter a number: ");
-  scanf("%d", &number);
+  int number = 5;
   printf("%d is %s\n", number, is_even(number) ? "even" : "not even");
   printf("%d is %s\n", number, is_odd(number) ? "odd": "not odd");
   printf("Square of %d is %d\n", number, square(number));
