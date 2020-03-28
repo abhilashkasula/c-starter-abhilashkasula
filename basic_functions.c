@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 unsigned char is_even(int);
 unsigned char is_odd(int);
@@ -9,6 +10,7 @@ int get_greatest(int, int);
 int greatest_of_three(int, int, int);
 float convert_to_centigrade(int);
 float convert_to_fahrenheit(int);
+float calculate_CI(long int, int, int);
 float calculate_SI(long int, int, int);
 int gcd(int, int);
 int lcm(int, int);
@@ -54,6 +56,10 @@ float calculate_SI(long int principle, int interest, int period) {
   return (principle * interest * period) / 100.00;
 }
 
+float calculate_CI(long int principle, int interest, int period) {
+  return (principle * pow(1 + (interest / 100.00), 2)) - principle;
+}
+
 int gcd(int num1, int num2) {
   int remainder = num1, number = num2;
   while(remainder > 0) {
@@ -72,7 +78,7 @@ int main(void) {
   int number = 3, num2 = 10, num3 = 3;
   int temp = 100;
   int period = 2, interest = 8;
-  long int principle = 400;
+  long int principle = 40000;
   printf("%d is %s\n", number, is_even(number) ? "even" : "not even");
   printf("%d is %s\n", number, is_odd(number) ? "odd": "not odd");
   printf("Square of %d is %d\n", number, square(number));
@@ -82,6 +88,7 @@ int main(void) {
   printf("Centigrade of given Fahrenheit %d is %f\n", temp, convert_to_centigrade(temp));
   printf("Fahrenheit of given Centigrade %d is %f\n", temp, convert_to_fahrenheit(temp));
   printf("SI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_SI(principle, interest, period));
+  printf("CI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_CI(principle, interest, period));
   printf("GCD of %d, %d is %d\n", number, num2, gcd(number, num2));
   printf("LCM of %d, %d is %d\n", number, num2, lcm(number, num2));
 }
