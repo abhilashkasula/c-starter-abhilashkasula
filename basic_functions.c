@@ -29,12 +29,18 @@ int greatestOfThree(int num1, int num2, int num3) {
   return getGreatest(getGreatest(num1, num2), num3);
 }
 
+float convertToCentigrade(int temp) {
+  return ((temp - 32) * 5) / 9.00;
+}
+
 int main(void) {
   int number = 2, num2 = 2, num3 = 3;
+  int temp = 100;
   printf("%d is %s\n", number, is_even(number) ? "even" : "not even");
   printf("%d is %s\n", number, is_odd(number) ? "odd": "not odd");
   printf("Square of %d is %d\n", number, square(number));
   printf("Cube of %d is %d\n", number, cube(number));
   printf("Average of %d, %d and %d is %f\n", number, num2, num3, average(number, num2, num3));
-  printf("Greatest of %d, %d and %d is %d", number, num2, num3, greatestOfThree(number, num2, num3));
+  printf("Greatest of %d, %d and %d is %d\n", number, num2, num3, greatestOfThree(number, num2, num3));
+  printf("Centigrade of given Fahrenheit %d is %f\n", temp, convertToCentigrade(temp));
 }
