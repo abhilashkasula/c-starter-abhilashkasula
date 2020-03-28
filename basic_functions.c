@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 unsigned char is_even(int);
 unsigned char is_odd(int);
@@ -10,6 +10,7 @@ int greatest_of_three(int, int, int);
 float convert_to_centigrade(int);
 float convert_to_fahrenheit(int);
 float calculate_SI(long int, int, int);
+int gcd(int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -52,8 +53,18 @@ float calculate_SI(long int principle, int interest, int period) {
   return (principle * interest * period) / 100.00;
 }
 
+int gcd(int num1, int num2) {
+  int remainder = num1, number = num2;
+  while(remainder > 0) {
+    int temp = remainder;
+    remainder = number % remainder;
+    number = temp;
+  }
+  return number;
+}
+
 int main(void) {
-  int number = 2, num2 = 2, num3 = 3;
+  int number = 3, num2 = 10, num3 = 3;
   int temp = 100;
   int period = 2, interest = 8;
   long int principle = 400;
@@ -66,4 +77,5 @@ int main(void) {
   printf("Centigrade of given Fahrenheit %d is %f\n", temp, convert_to_centigrade(temp));
   printf("Fahrenheit of given Centigrade %d is %f\n", temp, convert_to_fahrenheit(temp));
   printf("SI of Principle: %ld, Interest: %d, Period: %d is %f\n", principle, interest, period, calculate_SI(principle, interest, period));
+  printf("GCD of %d, %d is %d\n", number, num2, gcd(number, num2));
 }
