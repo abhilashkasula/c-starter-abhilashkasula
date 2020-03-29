@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-unsigned int factorial(int);
+unsigned long int factorial(int);
 int fibonacci(int);
 unsigned char is_even(int);
 int print_odds(int, int);
@@ -44,7 +44,7 @@ int fibonacci(int length) {
   return 0;
 }
 
-unsigned int factorial(int number) {
+unsigned long int factorial(int number) {
   unsigned long int fact = 1;
   for(int index = 1; index <= number; index++) {
     fact *= index;
@@ -102,7 +102,7 @@ int print_odds_backwards(int startingAt) {
 
 int main(void) {
   int number = 5, num2 = 10;
-  printf("\nFactorial of %d is %u\n", number, factorial(number));
+  printf("\nFactorial of %d is %lu\n", number, factorial(number));
   fibonacci(10);
   print_odds(1, 10);
   print_evens(10);
