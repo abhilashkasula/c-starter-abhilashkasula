@@ -8,6 +8,7 @@ int print_evens(int);
 int print_multiplication_table(int, int);
 long int add_numbers(int, int);
 long int multiply_numbers(int, int);
+int print_nth_number(int, int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -59,18 +60,26 @@ int print_multiplication_table(int m, int n) {
 
 long int add_numbers(int startingAt, int endingAt) {
   long int sum = 0;
-  for(int index = startingAt; index <= endingAt; index++) {
-    sum += index;
+  for(int num = startingAt; num <= endingAt; num++) {
+    sum += num;
   }
   return sum;
 }
 
 long int multiply_numbers(int startingAt, int endingAt) {
   long int product = 1;
-  for(int index = startingAt; index <= endingAt; index++) {
-    product *= index;
+  for(int num = startingAt; num <= endingAt; num++) {
+    product *= num;
   }
   return product;
+}
+
+int print_nth_number(int step, int startingAt, int endingAt) {
+  printf("\nEvery %dth number between %d and %d are:\n", step, startingAt, endingAt);
+  for(int num = startingAt; num <= endingAt; num += step) {
+    printf("%d\n", num);
+  }
+  return 0;
 }
 
 int main(void) {
@@ -83,5 +92,6 @@ int main(void) {
   printf("\nSum of numbers between %d and %d is %ld\n", number, num2, add_numbers(number, num2));
   printf("Product of numbers between %d and %d is %ld\n", number, num2, multiply_numbers(number, num2));
   print_odds(6, 15);
+  print_nth_number(4, 3, 15);
   return 0;
 }
