@@ -9,6 +9,7 @@ int print_multiplication_table(int, int);
 long int add_numbers(int, int);
 long int multiply_numbers(int, int);
 int print_nth_number(int, int, int);
+long int add_evens(int, int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -82,6 +83,14 @@ int print_nth_number(int step, int startingAt, int endingAt) {
   return 0;
 }
 
+long int add_evens(int startingAt, int endingAt) {
+  long int sum = 0;
+  for(int num = startingAt; num <= endingAt; num++) {
+    is_even(num) && (sum += num);
+  }
+  return sum;
+}
+
 int main(void) {
   int number = 5, num2 = 10;
   printf("\nFactorial of %d is %u\n", number, factorial(number));
@@ -93,5 +102,6 @@ int main(void) {
   printf("Product of numbers between %d and %d is %ld\n", number, num2, multiply_numbers(number, num2));
   print_odds(6, 15);
   print_nth_number(4, 3, 15);
+  printf("\nSum of evens between %d and %d is %ld\n", number, num2, add_evens(number, num2));
   return 0;
 }
