@@ -49,7 +49,7 @@ float convert_to_centigrade(int temp) {
 }
 
 float convert_to_fahrenheit(int temp) {
-  return ((temp * 9.00) / 5) + 32;
+  return ((temp * 9) / 5.00) + 32;
 }
 
 float calculate_SI(long int principle, int interest, int period) {
