@@ -10,6 +10,7 @@ long int add_numbers(int, int);
 long int multiply_numbers(int, int);
 int print_nth_number(int, int, int);
 long int add_evens(int, int);
+int print_odds_backwards(int);
 
 unsigned char is_even(int number) {
   return number % 2 == 0 ;
@@ -54,7 +55,7 @@ unsigned int factorial(int number) {
 int print_multiplication_table(int m, int n) {
   printf("\nMultiplication table of %d till %d:\n", m, n);
   for(int i = 1; i <= n; i++) {
-    printf("%d\n", m*i);
+    printf("%d x %d = %d\n", m, i, m * i);
   }
   return 0;
 }
@@ -91,6 +92,14 @@ long int add_evens(int startingAt, int endingAt) {
   return sum;
 }
 
+int print_odds_backwards(int startingAt) {
+  printf("\nOdds between %d and 1 in reverse order are:\n", startingAt);
+  for(int num = startingAt; num >= 1; num--) {
+    !is_even(num) && printf("%d\n", num);
+  }
+  return 0;
+}
+
 int main(void) {
   int number = 5, num2 = 10;
   printf("\nFactorial of %d is %u\n", number, factorial(number));
@@ -103,5 +112,6 @@ int main(void) {
   print_odds(6, 15);
   print_nth_number(4, 3, 15);
   printf("\nSum of evens between %d and %d is %ld\n", number, num2, add_evens(number, num2));
+  print_odds_backwards(10);
   return 0;
 }
