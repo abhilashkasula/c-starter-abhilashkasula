@@ -3,7 +3,7 @@
 unsigned int factorial(int);
 int fibonacci(int);
 unsigned char is_even(int);
-int print_odds(int);
+int print_odds(int, int);
 int print_evens(int);
 int print_multiplication_table(int, int);
 long int add_numbers(int, int);
@@ -21,9 +21,9 @@ int print_evens(int length) {
   return 0;
 }
 
-int print_odds(int length) {
-  printf("\nOdd numbers between 1 and %d are:\n", length);
-  for(int num = 1; num <= length; num++) {
+int print_odds(int startingAt, int endingAt) {
+  printf("\nOdd numbers between %d and %d are:\n", startingAt, endingAt);
+  for(int num = startingAt; num <= endingAt; num++) {
     !is_even(num) && printf("%d\n", num);
   }
   return 0;
@@ -77,10 +77,11 @@ int main(void) {
   int number = 5, num2 = 10;
   printf("\nFactorial of %d is %u\n", number, factorial(number));
   fibonacci(10);
-  print_odds(10);
+  print_odds(1, 10);
   print_evens(10);
   print_multiplication_table(5, 10);
   printf("\nSum of numbers between %d and %d is %ld\n", number, num2, add_numbers(number, num2));
   printf("Product of numbers between %d and %d is %ld\n", number, num2, multiply_numbers(number, num2));
+  print_odds(6, 15);
   return 0;
 }
