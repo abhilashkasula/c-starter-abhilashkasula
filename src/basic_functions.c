@@ -57,7 +57,7 @@ float calculate_SI(long int principle, int interest, int period) {
 }
 
 float calculate_CI(long int principle, int interest, int period) {
-  return (principle * pow(1 + (interest / 100.00), 2)) - principle;
+  return (principle * pow(1 + (interest / 100.00), period)) - principle;
 }
 
 int gcd(int num1, int num2) {
