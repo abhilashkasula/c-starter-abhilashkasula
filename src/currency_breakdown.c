@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int print_denominations(unsigned long int);
-unsigned int print_note_count(unsigned long int, unsigned int);
+unsigned long int print_note_count(unsigned long int, unsigned int);
 
-unsigned int print_note_count(unsigned long int currency, unsigned int rupee) {
+unsigned long int print_note_count(unsigned long int currency, unsigned int rupee) {
   unsigned int count = currency / rupee;
   count > 0 && printf("%u x RS %u\n", count, rupee);
   return currency % rupee;
