@@ -1,8 +1,8 @@
 #include "convertor.h"
 
 void convert_to_hexadecimal(decimal number, char * hexadecimal, decimal length) {
-  for(int i = 0; i < length; i++) {
-    hexadecimal[i] = GET_HEX((number >> 28));
+  LOOP(0, length) {
+    hexadecimal[index] = GET_HEX((number >> 28));
     number <<= 4;
   }
 }
@@ -15,8 +15,8 @@ void print_hexa(decimal number) {
 }
 
 void convert_to_binary(decimal number, char * binary, decimal length) {
-  for(int i = 0; i < length; i++) {
-    binary[i] = GET_BINARY((number >> 31) & 0x1);
+  LOOP(0, length) {
+    binary[index] = GET_BINARY((number >> 31) & 0x1);
     number <<= 1;
   }
 }
